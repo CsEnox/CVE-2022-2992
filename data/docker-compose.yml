@@ -1,0 +1,12 @@
+web:
+  image: 'gitlab/gitlab-ee:15.3.1-ee.0'
+  restart: always
+  container_name: gitlab
+  hostname: 'gitlab.example'
+  ports:
+    - '80:80'
+    - '443:443'
+  volumes:
+    - '/srv/gitlab/config:/etc/gitlab'
+    - '/srv/gitlab/logs:/var/log/gitlab'
+    - '/srv/gitlab/data:/var/opt/gitlab'
